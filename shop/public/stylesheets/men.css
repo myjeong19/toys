@@ -1,0 +1,18 @@
+main {
+  margin-top: 14vw;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100vh;
+}
+
+li {
+  margin-bottom: 10rem;
+  height: 50vh;
+}
+
+img {
+  width: 23vw;
+}
