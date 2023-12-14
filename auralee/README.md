@@ -8,11 +8,9 @@
 
 3. npm start
 
-## 사용한 툴
-
 ## 구현 내역
 
-- 2023.12.15
+- 2023.12.14
   - 화면: 홈, 로그인, 남성 의류
   - 기능: collection, login, material-matters, men, projects, women 라우팅
 
