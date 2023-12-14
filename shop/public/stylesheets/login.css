@@ -1,0 +1,38 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#title,
+#sub-title {
+  position: absolute;
+  top: 10vw;
+}
+
+#title {
+  left: 5vw;
+}
+
+#sub-title {
+  left: 55vw;
+}
+
+#login-box {
+  border-right: 1px solid #333;
+  width: 50%;
+}
+
+#join {
+  width: 50%;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #333;
+}
+
+#register-member {
+  border: 1px solid #333;
+  height: 2.5rem;
+  border-radius: 5px;
+}
