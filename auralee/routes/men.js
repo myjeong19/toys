@@ -60,4 +60,8 @@ router.get('/', async (req, res, next) => {
   res.render('men', { productList });
 });
 
+router.get('/detail/:id', async (req, res, next) => {
+  res.render('men', { productList });
+});
+
 module.exports = router;

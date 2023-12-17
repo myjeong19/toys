@@ -12,6 +12,7 @@ const womenRouter = require('./routes/women');
 const collectionRouter = require('./routes/collection');
 const materialMattersRouter = require('./routes/material-matters');
 const projectsRouter = require('./routes/projects');
+const cartRouter = require('./routes/cart');
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use('/women', womenRouter);
 app.use('/collection', collectionRouter);
 app.use('/material-matters', materialMattersRouter);
 app.use('/projects', projectsRouter);
+app.use('/cart', cartRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
