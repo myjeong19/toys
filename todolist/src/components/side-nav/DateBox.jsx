@@ -1,5 +1,17 @@
+import { useState } from 'react';
 import classes from './css/DateBox.module.css';
 
 export const DateBox = () => {
-  return <div className={classes.dateBox}></div>;
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const day = date.getDay();
+
+  return (
+    <div className={classes.dateBox}>
+      <strong>
+        {year}.{month}.{day}
+      </strong>
+    </div>
+  );
 };
