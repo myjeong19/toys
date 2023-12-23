@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-import { supabase } from './supabaseClient';
 import { Main } from './components/main/Main';
 import { Form } from './components/side-nav/Form';
 import { DateBox } from './components/side-nav/DateBox';

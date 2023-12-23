@@ -1,6 +1,14 @@
 .dateBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
   grid-area: 2 / 4 / 3 / 5;
   border-radius: 26px;
   background: linear-gradient(145deg, #f0f0f0, #cacaca);
   box-shadow: 50px 50px 100px #bebebe, -50px -50px 100px #ffffff;
+}
+
+.dateBox strong {
+  font-size: 5rem;
 }

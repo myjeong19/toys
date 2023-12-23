@@ -1,25 +1,49 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { supabase } from '../../supabaseClient';
 import classes from './css/Form.module.css';
 
-export const Form = ({ todoList, onTodoList }) => {
+export const Form = () => {
   const [userValue, setUserValue] = useState('');
+  const [userDate, setUserDate] = useState('');
+  const handleUserValue = event => setUserValue(event.target.value);
+  const handleUserDate = event => setUserDate(event.target.value);
 
-  const handleSubmit = event => {
-    if (event.key === 'Enter') {
-      onTodoList([...todoList, userValue]);
+  const handleSubmit = async event => {
+    event.preventDefault();
+
+    if (userValue.length > 0 && userDate) {
+      const { data, error } = await supabase
+        .from('todos')
+        .insert([
+          {
+            title: event.target.title.value,
+            status: 'Todo',
+            date: event.target.date.value,
+          },
+        ])
+        .select();
     }
+    setUserValue('');
+    setUserDate('');
   };
 
-  const handleUserValue = event => setUserValue(event.target.value);
+  useEffect(() => {}, []);
 
   return (
-    <div className={classes.form} onSubmit={handleSubmit}>
+    <form className={classes.form} onSubmit={handleSubmit}>
       <input
         type='text'
+        name='title'
         onChange={handleUserValue}
         value={userValue}
-        onKeyDown={handleSubmit}
       />
-    </div>
+      <input
+        type='date'
+        name='date'
+        value={userDate}
+        onChange={handleUserDate}
+      />
+      <button type='submit'>Add</button>
+    </form>
   );
 };
