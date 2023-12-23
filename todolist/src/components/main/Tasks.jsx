@@ -4,11 +4,24 @@ import { MdDelete } from 'react-icons/md';
 
 export const Tasks = ({ tasks }) => {
   const elementTasks = tasks.map(todo => {
-    const handleDeleteTasks = async () => {
-      const { data, error } = await supabase
-        .from('todos')
-        .delete()
-        .eq('id', todo.id);
+    const handleDeleteTasks = async () =>
+      await supabase.from('todos').delete().eq('id', todo.id);
+    const updateTaskStatus = async () => {
+      if (todo.status === 'Todo') {
+        await supabase
+          .from('todos')
+          .update({ status: 'Doing' })
+          .eq('id', todo.id, 'status', 'Todo')
+          .select();
+        return;
+      } else if (todo.status === 'Doing') {
+        await supabase
+          .from('todos')
+          .update({ status: 'Done' })
+          .eq('id', todo.id, 'status', 'Doing')
+          .select();
+        return;
+      }
     };
 
     return (
@@ -16,7 +29,7 @@ export const Tasks = ({ tasks }) => {
         <h3>{todo.title}</h3>
 
         <div>
-          <button>{todo.status}</button>
+          <button onClick={updateTaskStatus}>{todo.status}</button>
           <button onClick={handleDeleteTasks}>
             <MdDelete />
           </button>
