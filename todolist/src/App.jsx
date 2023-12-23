@@ -1,15 +1,22 @@
-import './App.css';
+import { useState, useEffect } from 'react';
+import { supabase } from './supabaseClient';
 import { Main } from './components/main/Main';
-import { DateBox } from './components/side-nav/DateBox';
-import { Form } from './components/side-nav/Form';
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+  const fetchDate = async () => {
+    let { data: tasks, error } = await supabase.from('todos').select('*');
+    setTasks(tasks);
+  };
+
+  useEffect(() => {
+    fetchDate();
+  }, []);
+
   return (
-    <div className='app'>
-      <Main />
-      <DateBox />
-      <Form />
-    </div>
+    <>
+      <Main tasks={tasks} />
+    </>
   );
 }
 

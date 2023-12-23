@@ -5,3 +5,9 @@
   box-shadow: 50px 50px 100px #bebebe, -50px -50px 100px #ffffff;
   width: 20vw;
 }
+
+.form input {
+  height: 15%;
+  width: 100%;
+  border: none;
+}

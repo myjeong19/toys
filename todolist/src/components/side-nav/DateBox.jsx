@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import classes from './css/DateBox.module.css';
 
 export const DateBox = () => {
