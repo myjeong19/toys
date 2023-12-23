@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import classes from './css/Header.module.css';
 
 export const Header = ({ onSelectStatus }) => {
+  const [focus, setFocus] = useState('fasle');
+
   const handleFilter = event => {
     onSelectStatus(event.target.value);
   };

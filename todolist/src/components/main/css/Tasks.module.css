@@ -8,9 +8,7 @@
   width: 90%;
   height: 5rem;
   list-style: none;
-  box-shadow: 10px 10px 57px -1px rgba(0, 0, 0, 0.12);
-  -webkit-box-shadow: 10px 10px 57px -1px rgba(0, 0, 0, 0.12);
-  -moz-box-shadow: 10px 10px 57px -1px rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid #111;
 }
 
 .card button {
