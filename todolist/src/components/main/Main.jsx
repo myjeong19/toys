@@ -7,9 +7,7 @@ export const Main = ({ tasks }) => {
   return (
     <main className={classes.main}>
       <Header />
-      <ul>
-        <List tasks={tasks} />
-      </ul>
+      <List tasks={tasks} />
     </main>
   );
 };
