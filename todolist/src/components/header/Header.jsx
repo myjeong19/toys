@@ -1,12 +1,24 @@
 import classes from './css/Header.module.css';
 
-export const Header = () => {
+export const Header = ({ onSelectStatus }) => {
+  const handleFilter = event => {
+    onSelectStatus(event.target.value);
+  };
+
   return (
     <header className={classes.header}>
-      <button>All</button>
-      <button>Todo</button>
-      <button>Doing</button>
-      <button>Done</button>
+      <button onClick={handleFilter} value={'All'}>
+        All
+      </button>
+      <button onClick={handleFilter} value={'Todo'}>
+        Todo
+      </button>
+      <button onClick={handleFilter} value={'Doing'}>
+        Doing
+      </button>
+      <button onClick={handleFilter} value={'Done'}>
+        Done
+      </button>
     </header>
   );
 };

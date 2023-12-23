@@ -6,19 +6,9 @@ import { DateBox } from './components/side-nav/DateBox';
 import classes from './App.module.css';
 
 function App() {
-  const [tasks, setTasks] = useState([]);
-  const fetchDate = async () => {
-    let { data: tasks, error } = await supabase.from('todos').select('*');
-    setTasks(tasks);
-  };
-
-  useEffect(() => {
-    fetchDate();
-  }, []);
-
   return (
     <div className={classes.app}>
-      <Main tasks={tasks} />
+      <Main />
       <Form />
       <DateBox />
     </div>
